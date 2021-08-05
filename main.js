@@ -22,8 +22,7 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
-
-// Add your functions below:
+// Validation function
 
 const validateCred = arr => {
     let luhnCheckNum = 0;
@@ -36,11 +35,13 @@ const validateCred = arr => {
             }
         }
         luhnCheckNum += currValue;
-        // console.log(arr.length - 1 - i);
+        
     }
     return luhnCheckNum % 10 === 0;
 }
-  
+
+// Invalid card number identification and retrieval function
+
 const findInvalidCards = arr => {
     invalidCards = [];
     for(let i = 0; i < arr.length; i++){
